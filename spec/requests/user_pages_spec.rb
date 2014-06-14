@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-require 'spec_helper'
 
 describe "User pages" do
 
@@ -12,4 +11,11 @@ describe "User pages" do
     it { should have_content('Sign up') }
     it { should have_title(full_title('Sign up')) }
   end
+
+  describe "profile pages" do
+    before {visit user_path(user)}
+
+    it {should have_content(user.name)}
+    it {shoudl have_title(user.name)}
+
 end
