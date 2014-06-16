@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'microposts/create'
-
-  get 'microposts/destroy'
-
   resources :users do
     member do
       get :following, :followers
